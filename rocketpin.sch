@@ -5033,7 +5033,7 @@ Source: http://www.murata.com .. GRM43DR72E224KW01.pdf</description>
 <parts>
 <part name="FLASH" library="led" deviceset="LED" device="5MM"/>
 <part name="LED" library="led" deviceset="LED" device="5MM"/>
-<part name="R1" library="resistor" deviceset="R-US_" device="0207/10"/>
+<part name="R1" library="resistor" deviceset="R-US_" device="0207/10" value="47R"/>
 <part name="R2" library="resistor" deviceset="R-US_" device="0207/10" value="47R"/>
 <part name="U$2" library="battery" deviceset="CR2032-GK" device=""/>
 </parts>
