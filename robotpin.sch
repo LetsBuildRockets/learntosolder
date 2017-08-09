@@ -50,8 +50,8 @@
 <layer number="92" name="Busses" color="1" fill="1" visible="yes" active="yes"/>
 <layer number="93" name="Pins" color="2" fill="1" visible="no" active="yes"/>
 <layer number="94" name="Symbols" color="4" fill="1" visible="yes" active="yes"/>
-<layer number="95" name="Names" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="96" name="Values" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="95" name="Names" color="7" fill="1" visible="no" active="yes"/>
+<layer number="96" name="Values" color="7" fill="1" visible="no" active="yes"/>
 <layer number="97" name="Info" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="98" name="Guide" color="6" fill="1" visible="yes" active="yes"/>
 </layers>
@@ -2325,7 +2325,7 @@ new: Attribute TP_SIGNAL_NAME&lt;br&gt;
 </class>
 </classes>
 <parts>
-<part name="U$1" library="battery" deviceset="CR2032-GK" device=""/>
+<part name="BATTERY" library="battery" deviceset="CR2032-GK" device=""/>
 <part name="LED1" library="led" deviceset="LED" device="5MM"/>
 <part name="LED2" library="led" deviceset="LED" device="5MM"/>
 <part name="TP1" library="testpad" deviceset="PTR1" device="TP12R"/>
@@ -2340,22 +2340,22 @@ new: Attribute TP_SIGNAL_NAME&lt;br&gt;
 <plain>
 </plain>
 <instances>
-<instance part="U$1" gate="G$1" x="22.86" y="38.1"/>
+<instance part="BATTERY" gate="G$1" x="22.86" y="38.1"/>
 <instance part="LED1" gate="G$1" x="25.4" y="22.86" rot="R270"/>
 <instance part="LED2" gate="G$1" x="25.4" y="7.62" rot="R270"/>
-<instance part="TP1" gate="G$1" x="60.96" y="35.56"/>
-<instance part="TP2" gate="G$1" x="71.12" y="35.56"/>
-<instance part="TP3" gate="G$1" x="78.74" y="33.02"/>
-<instance part="TP7" gate="G$1" x="55.88" y="25.4"/>
-<instance part="TP8" gate="G$1" x="68.58" y="27.94"/>
-<instance part="TP9" gate="G$1" x="76.2" y="25.4"/>
+<instance part="TP1" gate="G$1" x="121.92" y="40.64"/>
+<instance part="TP2" gate="G$1" x="127" y="40.64"/>
+<instance part="TP3" gate="G$1" x="132.08" y="40.64"/>
+<instance part="TP7" gate="G$1" x="121.92" y="33.02"/>
+<instance part="TP8" gate="G$1" x="127" y="33.02"/>
+<instance part="TP9" gate="G$1" x="132.08" y="33.02"/>
 </instances>
 <busses>
 </busses>
 <nets>
 <net name="N$1" class="0">
 <segment>
-<pinref part="U$1" gate="G$1" pin="+"/>
+<pinref part="BATTERY" gate="G$1" pin="+"/>
 <wire x1="27.94" y1="38.1" x2="48.26" y2="38.1" width="0.1524" layer="91"/>
 <wire x1="48.26" y1="38.1" x2="48.26" y2="22.86" width="0.1524" layer="91"/>
 <pinref part="LED1" gate="G$1" pin="A"/>
@@ -2370,7 +2370,7 @@ new: Attribute TP_SIGNAL_NAME&lt;br&gt;
 <pinref part="LED1" gate="G$1" pin="C"/>
 <wire x1="20.32" y1="22.86" x2="5.08" y2="22.86" width="0.1524" layer="91"/>
 <wire x1="5.08" y1="22.86" x2="5.08" y2="38.1" width="0.1524" layer="91"/>
-<pinref part="U$1" gate="G$1" pin="-"/>
+<pinref part="BATTERY" gate="G$1" pin="-"/>
 <wire x1="5.08" y1="38.1" x2="17.78" y2="38.1" width="0.1524" layer="91"/>
 <wire x1="5.08" y1="22.86" x2="5.08" y2="7.62" width="0.1524" layer="91"/>
 <pinref part="LED2" gate="G$1" pin="C"/>
