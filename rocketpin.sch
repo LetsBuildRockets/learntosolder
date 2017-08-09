@@ -5021,6 +5021,52 @@ Source: http://www.murata.com .. GRM43DR72E224KW01.pdf</description>
 </deviceset>
 </devicesets>
 </library>
+<library name="switch">
+<description>&lt;b&gt;Switches&lt;/b&gt;&lt;p&gt;
+Marquardt, Siemens, C&amp;K, ITT, and others&lt;p&gt;
+&lt;author&gt;Created by librarian@cadsoft.de&lt;/author&gt;</description>
+<packages>
+<package name="SPST-5MM">
+<pad name="P$1" x="-2.5" y="0" drill="0.6"/>
+<pad name="P$2" x="2.5" y="0" drill="0.6"/>
+<circle x="0" y="0" radius="3" width="0.127" layer="21"/>
+<circle x="0" y="0" radius="1.8" width="0.127" layer="21"/>
+<wire x1="-0.5" y1="1" x2="-0.5" y2="0.5" width="0.127" layer="21"/>
+<wire x1="0.5" y1="1" x2="0.5" y2="0.5" width="0.127" layer="21"/>
+<wire x1="-1" y1="-0.25" x2="1" y2="-0.25" width="0.127" layer="21" curve="151.927513"/>
+</package>
+</packages>
+<symbols>
+<symbol name="S">
+<wire x1="0" y1="-3.175" x2="0" y2="-1.905" width="0.254" layer="94"/>
+<wire x1="0" y1="-1.905" x2="-1.27" y2="1.905" width="0.254" layer="94"/>
+<wire x1="0" y1="1.905" x2="0" y2="3.175" width="0.254" layer="94"/>
+<text x="-2.54" y="-3.81" size="1.778" layer="95" rot="R90">&gt;NAME</text>
+<text x="3.81" y="-3.81" size="1.778" layer="96" rot="R90">&gt;VALUE</text>
+<pin name="P" x="0" y="-5.08" visible="pad" length="short" direction="pas" rot="R90"/>
+<pin name="S" x="0" y="5.08" visible="pad" length="short" direction="pas" rot="R270"/>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="EVQ-11D05B">
+<description>EVQ-11D05B Panasonic Tactile Switches Switch, Light Touch, SMD, 3.5x2.9mm Righ Side-operational Half Dive, L-Shape 2.2N, H=0.7mm</description>
+<gates>
+<gate name="G$1" symbol="S" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="SPST-5MM">
+<connects>
+<connect gate="G$1" pin="P" pad="P$1"/>
+<connect gate="G$1" pin="S" pad="P$2"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -5036,6 +5082,7 @@ Source: http://www.murata.com .. GRM43DR72E224KW01.pdf</description>
 <part name="R1" library="resistor" deviceset="R-US_" device="0207/10" value="47R"/>
 <part name="R2" library="resistor" deviceset="R-US_" device="0207/10" value="47R"/>
 <part name="U$2" library="battery" deviceset="CR2032-GK" device=""/>
+<part name="U$3" library="switch" deviceset="EVQ-11D05B" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -5046,7 +5093,8 @@ Source: http://www.murata.com .. GRM43DR72E224KW01.pdf</description>
 <instance part="LED" gate="G$1" x="55.88" y="58.42"/>
 <instance part="R1" gate="G$1" x="55.88" y="68.58" rot="R270"/>
 <instance part="R2" gate="G$1" x="38.1" y="68.58" rot="R270"/>
-<instance part="U$2" gate="G$1" x="20.32" y="60.96" rot="R90"/>
+<instance part="U$2" gate="G$1" x="20.32" y="55.88" rot="R90"/>
+<instance part="U$3" gate="G$1" x="20.32" y="73.66"/>
 </instances>
 <busses>
 </busses>
@@ -5055,13 +5103,12 @@ Source: http://www.murata.com .. GRM43DR72E224KW01.pdf</description>
 <segment>
 <pinref part="R2" gate="G$1" pin="1"/>
 <wire x1="38.1" y1="73.66" x2="38.1" y2="78.74" width="0.1524" layer="91"/>
-<pinref part="U$2" gate="G$1" pin="+"/>
-<wire x1="20.32" y1="66.04" x2="20.32" y2="78.74" width="0.1524" layer="91"/>
 <wire x1="20.32" y1="78.74" x2="38.1" y2="78.74" width="0.1524" layer="91"/>
 <pinref part="R1" gate="G$1" pin="1"/>
 <wire x1="38.1" y1="78.74" x2="55.88" y2="78.74" width="0.1524" layer="91"/>
 <wire x1="55.88" y1="78.74" x2="55.88" y2="73.66" width="0.1524" layer="91"/>
 <junction x="38.1" y="78.74"/>
+<pinref part="U$3" gate="G$1" pin="S"/>
 </segment>
 </net>
 <net name="N$2" class="0">
@@ -5075,7 +5122,7 @@ Source: http://www.murata.com .. GRM43DR72E224KW01.pdf</description>
 <segment>
 <pinref part="FLASH" gate="G$1" pin="C"/>
 <wire x1="38.1" y1="53.34" x2="38.1" y2="45.72" width="0.1524" layer="91"/>
-<wire x1="20.32" y1="55.88" x2="20.32" y2="45.72" width="0.1524" layer="91"/>
+<wire x1="20.32" y1="50.8" x2="20.32" y2="45.72" width="0.1524" layer="91"/>
 <pinref part="U$2" gate="G$1" pin="-"/>
 <wire x1="38.1" y1="45.72" x2="20.32" y2="45.72" width="0.1524" layer="91"/>
 <pinref part="LED" gate="G$1" pin="C"/>
@@ -5088,6 +5135,13 @@ Source: http://www.murata.com .. GRM43DR72E224KW01.pdf</description>
 <pinref part="FLASH" gate="G$1" pin="A"/>
 <pinref part="R2" gate="G$1" pin="2"/>
 <wire x1="38.1" y1="63.5" x2="38.1" y2="60.96" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$6" class="0">
+<segment>
+<pinref part="U$2" gate="G$1" pin="+"/>
+<pinref part="U$3" gate="G$1" pin="P"/>
+<wire x1="20.32" y1="60.96" x2="20.32" y2="68.58" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>
