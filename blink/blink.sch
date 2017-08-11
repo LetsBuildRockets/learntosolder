@@ -5822,6 +5822,104 @@ Source: AVX .. aphvc.pdf</description>
 </deviceset>
 </devicesets>
 </library>
+<library name="supply1">
+<description>&lt;b&gt;Supply Symbols&lt;/b&gt;&lt;p&gt;
+ GND, VCC, 0V, +5V, -5V, etc.&lt;p&gt;
+ Please keep in mind, that these devices are necessary for the
+ automatic wiring of the supply signals.&lt;p&gt;
+ The pin name defined in the symbol is identical to the net which is to be wired automatically.&lt;p&gt;
+ In this library the device names are the same as the pin names of the symbols, therefore the correct signal names appear next to the supply symbols in the schematic.&lt;p&gt;
+ &lt;author&gt;Created by librarian@cadsoft.de&lt;/author&gt;</description>
+<packages>
+</packages>
+<symbols>
+<symbol name="+3V3">
+<wire x1="1.27" y1="-1.905" x2="0" y2="0" width="0.254" layer="94"/>
+<wire x1="0" y1="0" x2="-1.27" y2="-1.905" width="0.254" layer="94"/>
+<text x="-2.54" y="-5.08" size="1.778" layer="96" rot="R90">&gt;VALUE</text>
+<pin name="+3V3" x="0" y="-2.54" visible="off" length="short" direction="sup" rot="R90"/>
+</symbol>
+<symbol name="GND">
+<wire x1="-1.905" y1="0" x2="1.905" y2="0" width="0.254" layer="94"/>
+<text x="-2.54" y="-2.54" size="1.778" layer="96">&gt;VALUE</text>
+<pin name="GND" x="0" y="2.54" visible="off" length="short" direction="sup" rot="R270"/>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="+3V3" prefix="+3V3">
+<description>&lt;b&gt;SUPPLY SYMBOL&lt;/b&gt;</description>
+<gates>
+<gate name="G$1" symbol="+3V3" x="0" y="0"/>
+</gates>
+<devices>
+<device name="">
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="GND" prefix="GND">
+<description>&lt;b&gt;SUPPLY SYMBOL&lt;/b&gt;</description>
+<gates>
+<gate name="1" symbol="GND" x="0" y="0"/>
+</gates>
+<devices>
+<device name="">
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
+<library name="switch">
+<description>&lt;b&gt;Switches&lt;/b&gt;&lt;p&gt;
+Marquardt, Siemens, C&amp;K, ITT, and others&lt;p&gt;
+&lt;author&gt;Created by librarian@cadsoft.de&lt;/author&gt;</description>
+<packages>
+<package name="SPST-5MM">
+<pad name="P$1" x="-2.5" y="0" drill="0.6"/>
+<pad name="P$2" x="2.5" y="0" drill="0.6"/>
+<circle x="0" y="0" radius="3" width="0.127" layer="21"/>
+<circle x="0" y="0" radius="1.8" width="0.127" layer="21"/>
+<wire x1="-0.5" y1="1" x2="-0.5" y2="0.5" width="0.127" layer="21"/>
+<wire x1="0.5" y1="1" x2="0.5" y2="0.5" width="0.127" layer="21"/>
+<wire x1="-1" y1="-0.25" x2="1" y2="-0.25" width="0.127" layer="21" curve="151.927513"/>
+</package>
+</packages>
+<symbols>
+<symbol name="S">
+<wire x1="0" y1="-3.175" x2="0" y2="-1.905" width="0.254" layer="94"/>
+<wire x1="0" y1="-1.905" x2="-1.27" y2="1.905" width="0.254" layer="94"/>
+<wire x1="0" y1="1.905" x2="0" y2="3.175" width="0.254" layer="94"/>
+<text x="-2.54" y="-3.81" size="1.778" layer="95" rot="R90">&gt;NAME</text>
+<text x="3.81" y="-3.81" size="1.778" layer="96" rot="R90">&gt;VALUE</text>
+<pin name="P" x="0" y="-5.08" visible="pad" length="short" direction="pas" rot="R90"/>
+<pin name="S" x="0" y="5.08" visible="pad" length="short" direction="pas" rot="R270"/>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="EVQ-11D05B">
+<description>EVQ-11D05B Panasonic Tactile Switches Switch, Light Touch, SMD, 3.5x2.9mm Righ Side-operational Half Dive, L-Shape 2.2N, H=0.7mm</description>
+<gates>
+<gate name="G$1" symbol="S" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="SPST-5MM">
+<connects>
+<connect gate="G$1" pin="P" pad="P$1"/>
+<connect gate="G$1" pin="S" pad="P$2"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
 <library name="led">
 <description>&lt;b&gt;LEDs&lt;/b&gt;&lt;p&gt;
 &lt;author&gt;Created by librarian@cadsoft.de&lt;/author&gt;&lt;br&gt;
@@ -7327,95 +7425,42 @@ Source: www.kingbright.com</description>
 </deviceset>
 </devicesets>
 </library>
-<library name="supply1">
-<description>&lt;b&gt;Supply Symbols&lt;/b&gt;&lt;p&gt;
- GND, VCC, 0V, +5V, -5V, etc.&lt;p&gt;
- Please keep in mind, that these devices are necessary for the
- automatic wiring of the supply signals.&lt;p&gt;
- The pin name defined in the symbol is identical to the net which is to be wired automatically.&lt;p&gt;
- In this library the device names are the same as the pin names of the symbols, therefore the correct signal names appear next to the supply symbols in the schematic.&lt;p&gt;
- &lt;author&gt;Created by librarian@cadsoft.de&lt;/author&gt;</description>
-<packages>
-</packages>
-<symbols>
-<symbol name="+3V3">
-<wire x1="1.27" y1="-1.905" x2="0" y2="0" width="0.254" layer="94"/>
-<wire x1="0" y1="0" x2="-1.27" y2="-1.905" width="0.254" layer="94"/>
-<text x="-2.54" y="-5.08" size="1.778" layer="96" rot="R90">&gt;VALUE</text>
-<pin name="+3V3" x="0" y="-2.54" visible="off" length="short" direction="sup" rot="R90"/>
-</symbol>
-<symbol name="GND">
-<wire x1="-1.905" y1="0" x2="1.905" y2="0" width="0.254" layer="94"/>
-<text x="-2.54" y="-2.54" size="1.778" layer="96">&gt;VALUE</text>
-<pin name="GND" x="0" y="2.54" visible="off" length="short" direction="sup" rot="R270"/>
-</symbol>
-</symbols>
-<devicesets>
-<deviceset name="+3V3" prefix="+3V3">
-<description>&lt;b&gt;SUPPLY SYMBOL&lt;/b&gt;</description>
-<gates>
-<gate name="G$1" symbol="+3V3" x="0" y="0"/>
-</gates>
-<devices>
-<device name="">
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-</devices>
-</deviceset>
-<deviceset name="GND" prefix="GND">
-<description>&lt;b&gt;SUPPLY SYMBOL&lt;/b&gt;</description>
-<gates>
-<gate name="1" symbol="GND" x="0" y="0"/>
-</gates>
-<devices>
-<device name="">
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-</devices>
-</deviceset>
-</devicesets>
-</library>
-<library name="switch">
-<description>&lt;b&gt;Switches&lt;/b&gt;&lt;p&gt;
-Marquardt, Siemens, C&amp;K, ITT, and others&lt;p&gt;
+<library name="battery">
+<description>&lt;b&gt;Lithium Batteries and NC Accus&lt;/b&gt;&lt;p&gt;
 &lt;author&gt;Created by librarian@cadsoft.de&lt;/author&gt;</description>
 <packages>
-<package name="SPST-5MM">
-<pad name="P$1" x="-2.5" y="0" drill="0.6"/>
-<pad name="P$2" x="2.5" y="0" drill="0.6"/>
-<circle x="0" y="0" radius="3" width="0.127" layer="21"/>
-<circle x="0" y="0" radius="1.8" width="0.127" layer="21"/>
-<wire x1="-0.5" y1="1" x2="-0.5" y2="0.5" width="0.127" layer="21"/>
-<wire x1="0.5" y1="1" x2="0.5" y2="0.5" width="0.127" layer="21"/>
-<wire x1="-1" y1="-0.25" x2="1" y2="-0.25" width="0.127" layer="21" curve="151.927513"/>
+<package name="BAT-HLD-001-THM">
+<pad name="P$1" x="10.4" y="1.5" drill="1" diameter="2.3"/>
+<pad name="P$2" x="10.4" y="-1.6" drill="1" diameter="2.3"/>
+<pad name="P$3" x="-10.4" y="1.5" drill="1" diameter="2.3"/>
+<pad name="P$4" x="-10.4" y="-1.6" drill="1" diameter="2.3"/>
+<smd name="P$5" x="0" y="0" dx="17.8" dy="17.8" layer="1" roundness="100"/>
 </package>
 </packages>
 <symbols>
-<symbol name="S">
-<wire x1="0" y1="-3.175" x2="0" y2="-1.905" width="0.254" layer="94"/>
-<wire x1="0" y1="-1.905" x2="-1.27" y2="1.905" width="0.254" layer="94"/>
-<wire x1="0" y1="1.905" x2="0" y2="3.175" width="0.254" layer="94"/>
-<text x="-2.54" y="-3.81" size="1.778" layer="95" rot="R90">&gt;NAME</text>
-<text x="3.81" y="-3.81" size="1.778" layer="96" rot="R90">&gt;VALUE</text>
-<pin name="P" x="0" y="-5.08" visible="pad" length="short" direction="pas" rot="R90"/>
-<pin name="S" x="0" y="5.08" visible="pad" length="short" direction="pas" rot="R270"/>
+<symbol name="1V2">
+<wire x1="-0.635" y1="0.635" x2="-0.635" y2="0" width="0.4064" layer="94"/>
+<wire x1="-2.54" y1="0" x2="-0.635" y2="0" width="0.1524" layer="94"/>
+<wire x1="-0.635" y1="0" x2="-0.635" y2="-0.635" width="0.4064" layer="94"/>
+<wire x1="0.635" y1="2.54" x2="0.635" y2="0" width="0.4064" layer="94"/>
+<wire x1="0.635" y1="0" x2="2.54" y2="0" width="0.1524" layer="94"/>
+<wire x1="0.635" y1="0" x2="0.635" y2="-2.54" width="0.4064" layer="94"/>
+<text x="-1.27" y="3.175" size="1.778" layer="95">&gt;NAME</text>
+<text x="-1.27" y="-5.08" size="1.778" layer="96">&gt;VALUE</text>
+<pin name="+" x="5.08" y="0" visible="pad" length="short" direction="pas" rot="R180"/>
+<pin name="-" x="-5.08" y="0" visible="pad" length="short" direction="pas"/>
 </symbol>
 </symbols>
 <devicesets>
-<deviceset name="EVQ-11D05B">
-<description>EVQ-11D05B Panasonic Tactile Switches Switch, Light Touch, SMD, 3.5x2.9mm Righ Side-operational Half Dive, L-Shape 2.2N, H=0.7mm</description>
+<deviceset name="CR2032-GK">
 <gates>
-<gate name="G$1" symbol="S" x="0" y="0"/>
+<gate name="G$1" symbol="1V2" x="0" y="0"/>
 </gates>
 <devices>
-<device name="" package="SPST-5MM">
+<device name="" package="BAT-HLD-001-THM">
 <connects>
-<connect gate="G$1" pin="P" pad="P$1"/>
-<connect gate="G$1" pin="S" pad="P$2"/>
+<connect gate="G$1" pin="+" pad="P$1 P$2 P$3 P$4"/>
+<connect gate="G$1" pin="-" pad="P$5"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -7442,12 +7487,16 @@ Marquardt, Siemens, C&amp;K, ITT, and others&lt;p&gt;
 <part name="R4" library="resistor" deviceset="R-US_" device="0207/7"/>
 <part name="C1" library="resistor" deviceset="C-US" device="025-030X050"/>
 <part name="C2" library="resistor" deviceset="C-US" device="025-030X050"/>
-<part name="LED1" library="led" deviceset="LED" device="5MM"/>
-<part name="LED2" library="led" deviceset="LED" device="5MM"/>
 <part name="+3V1" library="supply1" deviceset="+3V3" device=""/>
 <part name="GND1" library="supply1" deviceset="GND" device=""/>
 <part name="T2" library="transistor" deviceset="2N3904" device=""/>
 <part name="U$1" library="switch" deviceset="EVQ-11D05B" device=""/>
+<part name="LED1" library="led" deviceset="LED" device="3MM"/>
+<part name="LED2" library="led" deviceset="LED" device="3MM"/>
+<part name="LED3" library="led" deviceset="LED" device="5MM"/>
+<part name="U$2" library="battery" deviceset="CR2032-GK" device=""/>
+<part name="+3V2" library="supply1" deviceset="+3V3" device=""/>
+<part name="GND2" library="supply1" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -7461,12 +7510,16 @@ Marquardt, Siemens, C&amp;K, ITT, and others&lt;p&gt;
 <instance part="R4" gate="G$1" x="71.12" y="76.2" rot="R90"/>
 <instance part="C1" gate="G$1" x="30.48" y="66.04" rot="R90"/>
 <instance part="C2" gate="G$1" x="50.8" y="66.04" rot="R270"/>
-<instance part="LED1" gate="G$1" x="83.82" y="60.96"/>
-<instance part="LED2" gate="G$1" x="0" y="60.96"/>
-<instance part="+3V1" gate="G$1" x="78.74" y="91.44" rot="R270"/>
-<instance part="GND1" gate="1" x="91.44" y="38.1" rot="R90"/>
+<instance part="+3V1" gate="G$1" x="78.74" y="96.52"/>
+<instance part="GND1" gate="1" x="93.98" y="35.56"/>
 <instance part="T2" gate="G1" x="68.58" y="50.8"/>
-<instance part="U$1" gate="G$1" x="0" y="45.72"/>
+<instance part="U$1" gate="G$1" x="-20.32" y="60.96"/>
+<instance part="LED1" gate="G$1" x="0" y="60.96"/>
+<instance part="LED2" gate="G$1" x="83.82" y="58.42" rot="R180"/>
+<instance part="LED3" gate="G$1" x="93.98" y="71.12" rot="R180"/>
+<instance part="U$2" gate="G$1" x="-20.32" y="73.66" rot="R90"/>
+<instance part="+3V2" gate="G$1" x="-20.32" y="83.82"/>
+<instance part="GND2" gate="1" x="-20.32" y="48.26"/>
 </instances>
 <busses>
 </busses>
@@ -7474,7 +7527,8 @@ Marquardt, Siemens, C&amp;K, ITT, and others&lt;p&gt;
 <net name="+3V3" class="0">
 <segment>
 <pinref part="+3V1" gate="G$1" pin="+3V3"/>
-<wire x1="76.2" y1="91.44" x2="71.12" y2="91.44" width="0.1524" layer="91"/>
+<wire x1="78.74" y1="93.98" x2="78.74" y2="91.44" width="0.1524" layer="91"/>
+<wire x1="78.74" y1="91.44" x2="71.12" y2="91.44" width="0.1524" layer="91"/>
 <pinref part="R1" gate="G$1" pin="2"/>
 <wire x1="71.12" y1="91.44" x2="55.88" y2="91.44" width="0.1524" layer="91"/>
 <wire x1="55.88" y1="91.44" x2="25.4" y2="91.44" width="0.1524" layer="91"/>
@@ -7490,30 +7544,29 @@ Marquardt, Siemens, C&amp;K, ITT, and others&lt;p&gt;
 <junction x="71.12" y="91.44"/>
 <junction x="10.16" y="91.44"/>
 <pinref part="R2" gate="G$1" pin="2"/>
+<pinref part="LED3" gate="G$1" pin="C"/>
+<wire x1="93.98" y1="76.2" x2="93.98" y2="91.44" width="0.1524" layer="91"/>
+<wire x1="93.98" y1="91.44" x2="78.74" y2="91.44" width="0.1524" layer="91"/>
+<junction x="78.74" y="91.44"/>
+</segment>
+<segment>
+<pinref part="U$2" gate="G$1" pin="+"/>
+<pinref part="+3V2" gate="G$1" pin="+3V3"/>
+<wire x1="-20.32" y1="78.74" x2="-20.32" y2="81.28" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$1" class="0">
 <segment>
 <pinref part="R1" gate="G$1" pin="1"/>
 <wire x1="10.16" y1="71.12" x2="10.16" y2="66.04" width="0.1524" layer="91"/>
-<wire x1="10.16" y1="66.04" x2="25.4" y2="66.04" width="0.1524" layer="91"/>
-<pinref part="R2" gate="G$1" pin="1"/>
-<wire x1="25.4" y1="66.04" x2="25.4" y2="71.12" width="0.1524" layer="91"/>
+<wire x1="10.16" y1="66.04" x2="27.94" y2="66.04" width="0.1524" layer="91"/>
 <pinref part="T1" gate="G1" pin="E"/>
 <wire x1="10.16" y1="66.04" x2="10.16" y2="55.88" width="0.1524" layer="91"/>
-<pinref part="LED2" gate="G$1" pin="A"/>
 <wire x1="10.16" y1="66.04" x2="0" y2="66.04" width="0.1524" layer="91"/>
 <wire x1="0" y1="66.04" x2="0" y2="63.5" width="0.1524" layer="91"/>
-<wire x1="25.4" y1="66.04" x2="25.4" y2="50.8" width="0.1524" layer="91"/>
-<pinref part="T1" gate="G1" pin="B"/>
-<wire x1="25.4" y1="50.8" x2="15.24" y2="50.8" width="0.1524" layer="91"/>
 <pinref part="C1" gate="G$1" pin="1"/>
-<wire x1="25.4" y1="66.04" x2="27.94" y2="66.04" width="0.1524" layer="91"/>
-<pinref part="C2" gate="G$1" pin="2"/>
-<wire x1="45.72" y1="66.04" x2="43.18" y2="66.04" width="0.1524" layer="91"/>
-<wire x1="43.18" y1="66.04" x2="38.1" y2="50.8" width="0.1524" layer="91"/>
-<wire x1="38.1" y1="50.8" x2="25.4" y2="50.8" width="0.1524" layer="91"/>
-<junction x="25.4" y="50.8"/>
+<pinref part="LED1" gate="G$1" pin="A"/>
+<junction x="10.16" y="66.04"/>
 </segment>
 </net>
 <net name="GND" class="0">
@@ -7523,47 +7576,73 @@ Marquardt, Siemens, C&amp;K, ITT, and others&lt;p&gt;
 <pinref part="T1" gate="G1" pin="C"/>
 <wire x1="10.16" y1="38.1" x2="71.12" y2="38.1" width="0.1524" layer="91"/>
 <wire x1="71.12" y1="38.1" x2="83.82" y2="38.1" width="0.1524" layer="91"/>
-<wire x1="83.82" y1="38.1" x2="88.9" y2="38.1" width="0.1524" layer="91"/>
+<wire x1="83.82" y1="38.1" x2="93.98" y2="38.1" width="0.1524" layer="91"/>
 <wire x1="10.16" y1="45.72" x2="10.16" y2="38.1" width="0.1524" layer="91"/>
-<pinref part="LED1" gate="G$1" pin="C"/>
 <wire x1="83.82" y1="55.88" x2="83.82" y2="38.1" width="0.1524" layer="91"/>
 <pinref part="T2" gate="G1" pin="E"/>
 <wire x1="71.12" y1="45.72" x2="71.12" y2="38.1" width="0.1524" layer="91"/>
 <junction x="71.12" y="38.1"/>
 <junction x="10.16" y="38.1"/>
+<pinref part="LED2" gate="G$1" pin="A"/>
+<pinref part="LED3" gate="G$1" pin="A"/>
+<wire x1="93.98" y1="38.1" x2="93.98" y2="68.58" width="0.1524" layer="91"/>
+<junction x="93.98" y="38.1"/>
+<junction x="83.82" y="38.1"/>
+<pinref part="LED1" gate="G$1" pin="C"/>
+<wire x1="0" y1="38.1" x2="0" y2="55.88" width="0.1524" layer="91"/>
+<junction x="0" y="38.1"/>
+</segment>
+<segment>
+<pinref part="GND2" gate="1" pin="GND"/>
 <pinref part="U$1" gate="G$1" pin="P"/>
-<wire x1="0" y1="38.1" x2="0" y2="40.64" width="0.1524" layer="91"/>
+<wire x1="-20.32" y1="50.8" x2="-20.32" y2="55.88" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$3" class="0">
 <segment>
-<pinref part="R3" gate="G$1" pin="1"/>
-<wire x1="55.88" y1="71.12" x2="55.88" y2="66.04" width="0.1524" layer="91"/>
 <pinref part="C2" gate="G$1" pin="1"/>
-<wire x1="55.88" y1="66.04" x2="53.34" y2="66.04" width="0.1524" layer="91"/>
 <pinref part="R4" gate="G$1" pin="1"/>
 <wire x1="71.12" y1="71.12" x2="71.12" y2="66.04" width="0.1524" layer="91"/>
-<wire x1="71.12" y1="66.04" x2="55.88" y2="66.04" width="0.1524" layer="91"/>
+<wire x1="71.12" y1="66.04" x2="53.34" y2="66.04" width="0.1524" layer="91"/>
 <wire x1="71.12" y1="66.04" x2="83.82" y2="66.04" width="0.1524" layer="91"/>
-<pinref part="LED1" gate="G$1" pin="A"/>
 <wire x1="83.82" y1="66.04" x2="83.82" y2="63.5" width="0.1524" layer="91"/>
 <pinref part="T2" gate="G1" pin="C"/>
 <wire x1="71.12" y1="66.04" x2="71.12" y2="55.88" width="0.1524" layer="91"/>
+<junction x="71.12" y="66.04"/>
+<pinref part="LED2" gate="G$1" pin="C"/>
+</segment>
+</net>
+<net name="N$4" class="0">
+<segment>
+<pinref part="T2" gate="G1" pin="B"/>
 <pinref part="C1" gate="G$1" pin="2"/>
 <wire x1="35.56" y1="66.04" x2="38.1" y2="66.04" width="0.1524" layer="91"/>
 <wire x1="38.1" y1="66.04" x2="43.18" y2="50.8" width="0.1524" layer="91"/>
 <wire x1="43.18" y1="50.8" x2="55.88" y2="50.8" width="0.1524" layer="91"/>
-<wire x1="55.88" y1="50.8" x2="55.88" y2="66.04" width="0.1524" layer="91"/>
-<junction x="71.12" y="66.04"/>
-<pinref part="T2" gate="G1" pin="B"/>
+<pinref part="R3" gate="G$1" pin="1"/>
 <wire x1="55.88" y1="50.8" x2="66.04" y2="50.8" width="0.1524" layer="91"/>
+<wire x1="55.88" y1="71.12" x2="55.88" y2="50.8" width="0.1524" layer="91"/>
+<junction x="55.88" y="50.8"/>
+</segment>
+</net>
+<net name="N$5" class="0">
+<segment>
+<pinref part="T1" gate="G1" pin="B"/>
+<pinref part="C2" gate="G$1" pin="2"/>
+<wire x1="45.72" y1="66.04" x2="43.18" y2="66.04" width="0.1524" layer="91"/>
+<wire x1="43.18" y1="66.04" x2="38.1" y2="50.8" width="0.1524" layer="91"/>
+<wire x1="38.1" y1="50.8" x2="25.4" y2="50.8" width="0.1524" layer="91"/>
+<pinref part="R2" gate="G$1" pin="1"/>
+<wire x1="25.4" y1="50.8" x2="15.24" y2="50.8" width="0.1524" layer="91"/>
+<wire x1="25.4" y1="71.12" x2="25.4" y2="50.8" width="0.1524" layer="91"/>
+<junction x="25.4" y="50.8"/>
 </segment>
 </net>
 <net name="N$2" class="0">
 <segment>
 <pinref part="U$1" gate="G$1" pin="S"/>
-<pinref part="LED2" gate="G$1" pin="C"/>
-<wire x1="0" y1="50.8" x2="0" y2="55.88" width="0.1524" layer="91"/>
+<pinref part="U$2" gate="G$1" pin="-"/>
+<wire x1="-20.32" y1="66.04" x2="-20.32" y2="68.58" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>
